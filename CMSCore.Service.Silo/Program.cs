@@ -30,8 +30,8 @@
                 //    options.ClusterId = "orleans-docker";
                 //    options.ServiceId = "AspNetSampleApp";
                 //})
-                .UseLocalhostClustering()
                 //.ConfigureEndpoints(siloPort: 11111, gatewayPort: 30000)
+                .UseLocalhostClustering()
                 .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(ReadContentGrain).Assembly).WithReferences().WithCodeGeneration())
                 .ConfigureLogging(builder => builder.SetMinimumLevel(LogLevel.Warning).AddConsole())
                 .ConfigureServices(services =>
@@ -39,7 +39,7 @@
                     var conf = Configuration;
                     services.AddSingleton<IConfiguration>(conf);
 
- 
+
                     services.AddSingleton<IDataConfiguration>(provider => new DataConfiguration(conf));
                     services.AddSingleton<IContentDbContext>(provider =>
                     {
@@ -47,6 +47,9 @@
                         return new ContentDbContext(p);
                     });
                     services.AddSingleton<IReadContentRepository, ReadContentRepository>();
+                    services.AddSingleton<ICreateContentRepository, CreateContentRepository>();
+                    services.AddSingleton<IUpdateContentRepository, UpdateContentRepository>();
+                    services.AddSingleton<IDeleteContentRepository, DeleteContentRepository>();
                 })
                 .Build();
 
@@ -75,7 +78,7 @@
         }
 
         public static IConfiguration Configuration => new ConfigurationBuilder()
-             .AddJsonFile("appsettings.json", false, true)
+            .AddJsonFile("appsettings.json", false, true)
             .Build();
     }
 }
