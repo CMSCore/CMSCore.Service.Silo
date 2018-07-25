@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSCore.Service.Silo", "CMSCore.Service.Silo\CMSCore.Service.Silo.csproj", "{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,7 +14,24 @@ Global
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Debug|x64.Build.0 = Debug|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Debug|x86.Build.0 = Debug|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Release|x64.ActiveCfg = Release|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Release|x64.Build.0 = Release|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6E1723E-A01B-4990-ADD2-93598AC3D6F8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60ABD963-3E27-40A8-9FD9-997E2F476963}
 	EndGlobalSection
 EndGlobal

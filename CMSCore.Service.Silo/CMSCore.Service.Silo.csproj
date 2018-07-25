@@ -1,8 +1,36 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ApplicationIcon />
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <StartupObject>CMSCore.Service.Silo.Program</StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Orleans.Clustering.AzureStorage" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Orleans.Core.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Orleans.Core.Legacy" Version="2.0.3" />
+    <PackageReference Include="Microsoft.Orleans.OrleansCodeGenerator" Version="2.0.3" />
+    <PackageReference Include="Microsoft.Orleans.OrleansCodeGenerator.Build" Version="2.0.3" />
+    <PackageReference Include="Microsoft.Orleans.Reminders.AzureStorage" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Orleans.Runtime.Legacy" Version="2.0.4" />
+    <PackageReference Include="Microsoft.Orleans.Server" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CMSCore.Library.Data\CMSCore.Library.Data\CMSCore.Library.Data.csproj" />
+    <ProjectReference Include="..\..\CMSCore.Library.GrainInterfaces\CMSCore.Library.GrainInterfaces\CMSCore.Library.GrainInterfaces.csproj" />
+    <ProjectReference Include="..\..\CMSCore.Library.Grains\CMSCore.Library.Grains\CMSCore.Library.Grains.csproj" />
+    <ProjectReference Include="..\..\CMSCore.Library.Messages\CMSCore.Library.Messages\CMSCore.Library.Messages.csproj" />
+    <ProjectReference Include="..\..\CMSCore.Library.Repository\CMSCore.Library.Repository\CMSCore.Library.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
