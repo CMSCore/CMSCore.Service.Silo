@@ -2,12 +2,15 @@
 {
     using System;
     using System.IO;
+    using System.Reflection;
     using System.Runtime.Loader;
     using System.Threading;
     using System.Threading.Tasks;
     using Library.Data.Configuration;
     using Library.Data.Context;
+    using Library.Data.Models;
     using Library.Grains;
+    using Library.Messages;
     using Library.Repository;
     using Library.Repository.Implementations;
     using Microsoft.Extensions.Configuration;
@@ -32,7 +35,15 @@
                 //})
                 //.ConfigureEndpoints(siloPort: 11111, gatewayPort: 30000)
                 .UseLocalhostClustering()
-                .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(ReadContentGrain).Assembly).WithReferences().WithCodeGeneration())
+                .ConfigureApplicationParts(parts =>
+                {
+                    parts.AddApplicationPart(typeof(ReadContentGrain).Assembly).WithReferences().WithCodeGeneration();
+
+                    parts.AddApplicationPart(typeof(FeedViewModel).Assembly).WithReferences();
+                    parts.AddApplicationPart(typeof(ReadContentRepository).Assembly).WithReferences();
+                    parts.AddApplicationPart(typeof(Page).Assembly).WithReferences();
+
+                })
                 .ConfigureLogging(builder => builder.SetMinimumLevel(LogLevel.Warning).AddConsole())
                 .ConfigureServices(services =>
                 {
