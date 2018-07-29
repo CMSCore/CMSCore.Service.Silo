@@ -1,11 +1,11 @@
-﻿using Orleans.CodeGeneration;
+﻿//using Orleans.CodeGeneration;
 
-[assembly: KnownAssembly("OtherAssembly")]
+//[assembly: KnownAssembly("OtherAssembly")]
 
-namespace CMSCore.Service.Silo
-{
-    public class OrleansCodeGeneratorClass
-    {
+//namespace CMSCore.Service.Silo
+//{
+//    public class OrleansCodeGeneratorClass
+//    {
 
-    }
-}
+//    }
+//}
